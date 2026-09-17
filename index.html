@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RunLocal — Free Tools That Run Entirely In Your Browser</title>
+<meta name="description" content="A small, growing collection of free utilities that run entirely client-side. No uploads, no accounts, no tracking of your files. Just open a tool and use it.">
+<link rel="stylesheet" href="https://gazetheeupon.github.io/shared-assets/theme.css">
+<link rel="canonical" href="https://gazetheeupon.github.io/">
+<meta property="og:title" content="RunLocal — Free Tools That Run Entirely In Your Browser">
+<meta property="og:description" content="A small, growing collection of free utilities that run entirely client-side. No uploads, no accounts, no tracking of your files.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gazetheeupon.github.io/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RunLocal — Free Tools That Run Entirely In Your Browser">
+<meta name="twitter:description" content="A small, growing collection of free utilities that run entirely client-side. No uploads, no accounts, no tracking of your files.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "RunLocal tools",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"url":"https://gazetheeupon.github.io/ocr-online/","name":"Free Online OCR"},
+    {"@type":"ListItem","position":2,"url":"https://gazetheeupon.github.io/heic-to-jpg/","name":"HEIC to JPG Converter"},
+    {"@type":"ListItem","position":3,"url":"https://gazetheeupon.github.io/pdf-toolkit/","name":"PDF Merge & Split"},
+    {"@type":"ListItem","position":4,"url":"https://gazetheeupon.github.io/zip-online/","name":"ZIP Creator & Extractor"},
+    {"@type":"ListItem","position":5,"url":"https://gazetheeupon.github.io/appliance-cost-calculator/","name":"Appliance Cost Calculator"},
+    {"@type":"ListItem","position":6,"url":"https://gazetheeupon.github.io/bill-of-sale-generator/","name":"Bill of Sale Generator"},
+    {"@type":"ListItem","position":7,"url":"https://gazetheeupon.github.io/move-out-record/","name":"Renter Move-Out Record"}
+  ]
+}
+</script>
+<style>
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;}
+  header.hero{padding:3rem 1rem 1.5rem;text-align:center;}
+  header.hero h1{font-size:2rem;margin:0 0 .6rem;}
+  header.hero p{color:var(--muted);margin:0 auto;max-width:600px;font-size:1.05rem;}
+  main{max-width:900px;margin:0 auto;padding:1.5rem 1rem 3rem;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem;}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem;text-decoration:none;color:var(--text);display:block;transition:border-color .15s;}
+  .card:hover{border-color:var(--accent);}
+  .card h2{font-size:1.05rem;margin:0 0 .4rem;}
+  .card p{color:var(--muted);font-size:.88rem;margin:0;line-height:1.45;}
+  .principles{margin-top:2.5rem;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;}
+  .principles h2{font-size:1.1rem;margin:0 0 .8rem;}
+  .principles ul{margin:0;padding-left:1.2rem;color:var(--muted);font-size:.92rem;}
+  .principles li{margin-bottom:.4rem;}
+  footer{text-align:center;color:var(--muted);font-size:.82rem;padding:1.5rem 1rem 2.5rem;}
+  footer a{color:var(--accent);}
+</style>
+</head>
+<body>
+<header class="hero">
+  <h1>RunLocal</h1>
+  <p>Free tools that run entirely in your browser. Nothing you open here is uploaded to a server &mdash; each tool works by loading an open-source library and doing the work locally, on your device.</p>
+</header>
+<main>
+  <div class="grid">
+    <a class="card" href="https://gazetheeupon.github.io/ocr-online/">
+      <h2>Free Online OCR</h2>
+      <p>Extract text from images and scanned documents, entirely in your browser.</p>
+    </a>
+    <a class="card" href="https://gazetheeupon.github.io/heic-to-jpg/">
+      <h2>HEIC to JPG Converter</h2>
+      <p>Convert iPhone HEIC/HEIF photos to JPG or PNG, entirely in your browser.</p>
+    </a>
+    <a class="card" href="https://gazetheeupon.github.io/pdf-toolkit/">
+      <h2>PDF Merge &amp; Split</h2>
+      <p>Combine PDFs into one file, or split a PDF into individual pages.</p>
+    </a>
+    <a class="card" href="https://gazetheeupon.github.io/zip-online/">
+      <h2>ZIP Creator &amp; Extractor</h2>
+      <p>Create a ZIP archive from your files, or extract files from a ZIP.</p>
+    </a>
+    <a class="card" href="https://gazetheeupon.github.io/appliance-cost-calculator/">
+      <h2>Appliance Cost Calculator</h2>
+      <p>See what an appliance actually costs to run, based on your electricity rate.</p>
+    </a>
+    <a class="card" href="https://gazetheeupon.github.io/bill-of-sale-generator/">
+      <h2>Bill of Sale Generator</h2>
+      <p>Generate a printable bill of sale for a vehicle or general goods.</p>
+    </a>
+    <a class="card" href="https://gazetheeupon.github.io/move-out-record/">
+      <h2>Renter Move-Out Record</h2>
+      <p>Document your rental's move-out condition and check security deposit deadlines for all 50 states plus DC.</p>
+    </a>
+  </div>
+
+  <div class="principles">
+    <h2>How these are built</h2>
+    <ul>
+      <li>Client-side only: each tool loads an open-source library (often compiled to WebAssembly) and does the actual work in your browser tab. Nothing you feed into a tool is ever sent to a server.</li>
+      <li>Free, ad-supported: a small banner ad on each page pays for hosting. No signup, no account, no paywall, no watermarks.</li>
+      <li>No tracking of your files: since your files never leave your device, there is nothing about them to log or sell.</li>
+    </ul>
+  </div>
+</main>
+<footer>
+  &copy; 2026 GazeTheeUpon. All rights reserved. <a href="LICENSE">Source license</a> &mdash; view-source friendly, redistribution not permitted.
+</footer>
+</body>
+</html>
