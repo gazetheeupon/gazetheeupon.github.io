@@ -1,0 +1,49 @@
+name: Notify IndexNow
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "sitemap.xml"
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 6 * * 1"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Build URL list from sitemap.xml and notify IndexNow
+        run: |
+          set -euo pipefail
+          KEY="15d0e5828fde17299508f3b2f557e3a6"
+          HOST="gazetheeupon.github.io"
+          KEY_LOCATION="https://${HOST}/${KEY}.txt"
+
+          URL_LIST_JSON=$(grep -oP '(?<=<loc>)[^<]+' sitemap.xml | jq -R . | jq -s .)
+
+          echo "Submitting $(echo "$URL_LIST_JSON" | jq 'length') URLs to IndexNow:"
+          echo "$URL_LIST_JSON"
+
+          BODY=$(jq -n \
+            --arg host "$HOST" \
+            --arg key "$KEY" \
+            --arg keyLocation "$KEY_LOCATION" \
+            --argjson urlList "$URL_LIST_JSON" \
+            '{host: $host, key: $key, keyLocation: $keyLocation, urlList: $urlList}')
+
+          HTTP_CODE=$(curl -s -o /tmp/indexnow_response.txt -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "$BODY")
+
+          echo "IndexNow response HTTP $HTTP_CODE:"
+          cat /tmp/indexnow_response.txt || true
+
+          if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "202" ]; then
+            echo "IndexNow submission failed with HTTP $HTTP_CODE"
+            exit 1
+          fi
